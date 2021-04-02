@@ -19,6 +19,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/services', 'HomeController@services')->name('services');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::resource('posts','PostController');
+Route::post('posts/delete/{id}','PostController@destroy')->name('delete.post');
+Route::resource('test','testController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
